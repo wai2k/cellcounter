@@ -26,8 +26,8 @@ var keyboard_platform = "desktop";
 var PRESET_GROUPS = {
     'myeloid_lineage_excl_blasts': {
         label: 'Myeloid Lineage (excl blasts)',
-        members: ['promyelocytes', 'myelocytes', 'meta', 'neutrophils', 'eosinophils', 'basophils'],
-        member_labels: 'Promyelocytes, Myelocytes, Metamyelocytes, Neutrophils, Eosinophils, Basophils'
+        members: ['promyelocytes', 'myelocytes', 'meta', 'neutrophils', 'eosinophils', 'basophils', 'immature_monocyte', 'mature_monocyte'],
+        member_labels: 'Promyelocytes, Myelocytes, Metamyelocytes, Neutrophils, Eosinophils, Basophils, Immature Monocytes, Mature Monocytes'
     },
     'blast_equivalents': {
         label: 'Blast Equivalents',

@@ -45,7 +45,7 @@ describe('PRESET_GROUPS configuration', function () {
         const group = window.PRESET_GROUPS['myeloid_lineage_excl_blasts'];
         assert.ok(group, 'myeloid_lineage_excl_blasts group should exist');
         assert.strictEqual(group.label, 'Myeloid Lineage (excl blasts)');
-        const expected = ['promyelocytes', 'myelocytes', 'meta', 'neutrophils', 'eosinophils', 'basophils'];
+        const expected = ['promyelocytes', 'myelocytes', 'meta', 'neutrophils', 'eosinophils', 'basophils', 'immature_monocyte', 'mature_monocyte'];
         assert.strictEqual(
             JSON.stringify(Array.from(group.members).sort()),
             JSON.stringify(expected.slice().sort())
