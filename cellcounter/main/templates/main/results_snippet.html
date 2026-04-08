@@ -31,6 +31,22 @@
                 {% endfor %}
             </tbody>
         </table>
+        <div id="group-totals" style="margin-top: 10px;">
+            <h4>Group Totals</h4>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th style="width: 60%">Group</th>
+                        <th>Count</th>
+                        <th>% Total</th>
+                    </tr>
+                </thead>
+                <tbody id="group-totals-tbody">
+                    <!-- Rows inserted by counter.js results.init() -->
+                </tbody>
+            </table>
+            <p class="muted"><small>Hover over a group name to see which cell types are included.</small></p>
+        </div>
         <p>* Note: Myeloid/erythroid ratio does not include blast count.</p>
       </div>
       <div id="statistics_text"></div>
