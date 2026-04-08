@@ -717,6 +717,7 @@ var results = (function () {
     var abnormal_total, me_ratio, count_total;
 
     var results_data;
+    var group_totals_data;
 
     function calc_stats () {
         count_total = counter_object.get_total();
@@ -800,6 +801,13 @@ var results = (function () {
         if (me_ratio === 'Infinity') {
             me_ratio = 'Incalculable';
         }
+
+        /* Compute preset group totals */
+        group_totals_data = compute_group_totals(
+            counter_object.get_count_data(),
+            PRESET_GROUPS,
+            count_total
+        );
     }
 
     function update_html () {
@@ -826,6 +834,13 @@ var results = (function () {
             $('.abnormal_stats').show();
             $('.table_spacer').attr('colspan', 3);
         }
+
+        /* Update group totals */
+        for (var gi = 0; gi < group_totals_data.length; gi++) {
+            var gt = group_totals_data[gi];
+            $('td#group-count-' + gt.key).text(gt.count);
+            $('td#group-percent-' + gt.key).text(gt.percent + '%');
+        }
     }
 
     function update_text () {
@@ -849,6 +864,11 @@ var results = (function () {
         stats_text += 'Cells Counted: ' + count_total + '\n';
         stats_text += 'M:E Ratio: ' + me_ratio + '\n';
         stats_text += per;
+        stats_text += '\nGroup Totals:\n';
+        for (var gi = 0; gi < group_totals_data.length; gi++) {
+            var gt = group_totals_data[gi];
+            stats_text += gt.label + ': ' + gt.count + ' (' + gt.percent + '%)\n';
+        }
         stats_text += '</code></pre>';
         stats_div.append(stats_text);
     }
@@ -863,6 +883,22 @@ var results = (function () {
             $('#textview').click(function () {
                 results.show('text');
             });
+
+            /* Render group rows dynamically — future custom groups plug in here */
+            var tbody = $('tbody#group-totals-tbody');
+            tbody.empty();
+            for (var group_key in PRESET_GROUPS) {
+                if (PRESET_GROUPS.hasOwnProperty(group_key)) {
+                    var g = PRESET_GROUPS[group_key];
+                    tbody.append(
+                        '<tr class="group-total-row">' +
+                        '<td class="group-name" title="Includes: ' + g.member_labels + '">' + g.label + '</td>' +
+                        '<td id="group-count-' + group_key + '">0</td>' +
+                        '<td id="group-percent-' + group_key + '">0%</td>' +
+                        '</tr>'
+                    );
+                }
+            }
         },
 
         show: function (fmt) {
