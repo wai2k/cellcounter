@@ -23,13 +23,16 @@ CELLTYPE_LIST = [
     ("Eosinophils", "eosinophils"),
     ("Erythroid", "erythroid"),
     ("Lymphocytes", "lymphocytes"),
-    ("Monocytes", "monocytes"),
+    ("Mature monocyte", "mature_monocyte"),
     ("Plasma cells", "plasma_cells"),
     ("Lymphoblasts", "ly_blasts"),
     ("Other", "other"),
+    ("Monoblast", "monoblast"),
+    ("Promonocyte", "promonocyte"),
+    ("Immature monocyte", "immature_monocyte"),
 ]
 
-CELLTYPE_JSON = '[{"id":1,"readable_name":"Neutrophils","machine_name":"neutrophils","abbr_name":"neut","comment":"","visualisation_colour":"#4f6228","display_order":4},{"id":2,"readable_name":"Metamyelocytes","machine_name":"meta","abbr_name":"meta","comment":"","visualisation_colour":"#77933c","display_order":3},{"id":3,"readable_name":"Myelocytes","machine_name":"myelocytes","abbr_name":"myelo","comment":"","visualisation_colour":"#c3d69b","display_order":2},{"id":4,"readable_name":"Promyelocytes","machine_name":"promyelocytes","abbr_name":"promyelo","comment":"","visualisation_colour":"#d7e4bd","display_order":1},{"id":5,"readable_name":"Blasts","machine_name":"blasts","abbr_name":"blast","comment":"","visualisation_colour":"#ebf1de","display_order":0},{"id":6,"readable_name":"Basophils","machine_name":"basophils","abbr_name":"baso","comment":"","visualisation_colour":"#8064a2","display_order":6},{"id":7,"readable_name":"Eosinophils","machine_name":"eosinophils","abbr_name":"eo","comment":"","visualisation_colour":"#f79546","display_order":7},{"id":8,"readable_name":"Erythroid","machine_name":"erythroid","abbr_name":"erythro","comment":"","visualisation_colour":"#ff0000","display_order":10},{"id":9,"readable_name":"Lymphocytes","machine_name":"lymphocytes","abbr_name":"lympho","comment":"","visualisation_colour":"#ffffff","display_order":8},{"id":10,"readable_name":"Monocytes","machine_name":"monocytes","abbr_name":"mono","comment":"","visualisation_colour":"#bfbfbf","display_order":5},{"id":11,"readable_name":"Plasma cells","machine_name":"plasma_cells","abbr_name":"plasma","comment":"","visualisation_colour":"#0000ff","display_order":9},{"id":12,"readable_name":"Other","machine_name":"other","abbr_name":"other","comment":"","visualisation_colour":"#f9ff00","display_order":11},{"id":13,"readable_name":"Lymphoblasts","machine_name":"lymphoblasts","abbr_name":"ly_blasts","comment":"","visualisation_colour":"#606060","display_order":12},{"id":14,"readable_name":"test","machine_name":"test","abbr_name":"test","comment":"Test","visualisation_colour":"#FFFFFF","display_order":13}]'
+CELLTYPE_JSON = '[{"id":1,"readable_name":"Neutrophils","machine_name":"neutrophils","abbr_name":"neut","comment":"","visualisation_colour":"#4f6228","display_order":4},{"id":2,"readable_name":"Metamyelocytes","machine_name":"meta","abbr_name":"meta","comment":"","visualisation_colour":"#77933c","display_order":3},{"id":3,"readable_name":"Myelocytes","machine_name":"myelocytes","abbr_name":"myelo","comment":"","visualisation_colour":"#c3d69b","display_order":2},{"id":4,"readable_name":"Promyelocytes","machine_name":"promyelocytes","abbr_name":"promyelo","comment":"","visualisation_colour":"#d7e4bd","display_order":1},{"id":5,"readable_name":"Blasts","machine_name":"blasts","abbr_name":"blast","comment":"","visualisation_colour":"#ebf1de","display_order":0},{"id":6,"readable_name":"Basophils","machine_name":"basophils","abbr_name":"baso","comment":"","visualisation_colour":"#8064a2","display_order":9},{"id":7,"readable_name":"Eosinophils","machine_name":"eosinophils","abbr_name":"eo","comment":"","visualisation_colour":"#f79546","display_order":10},{"id":8,"readable_name":"Erythroid","machine_name":"erythroid","abbr_name":"erythro","comment":"","visualisation_colour":"#ff0000","display_order":13},{"id":9,"readable_name":"Lymphocytes","machine_name":"lymphocytes","abbr_name":"lympho","comment":"","visualisation_colour":"#ffffff","display_order":11},{"id":10,"readable_name":"Mature monocyte","machine_name":"mature_monocyte","abbr_name":"mono","comment":"","visualisation_colour":"#bfbfbf","display_order":8},{"id":11,"readable_name":"Plasma cells","machine_name":"plasma_cells","abbr_name":"plasma","comment":"","visualisation_colour":"#0000ff","display_order":12},{"id":12,"readable_name":"Other","machine_name":"other","abbr_name":"other","comment":"","visualisation_colour":"#f9ff00","display_order":14},{"id":13,"readable_name":"Lymphoblasts","machine_name":"lymphoblasts","abbr_name":"ly_blasts","comment":"","visualisation_colour":"#606060","display_order":15},{"id":14,"readable_name":"Monoblast","machine_name":"monoblast","abbr_name":"monobl","comment":"","visualisation_colour":"#c055b8","display_order":5},{"id":15,"readable_name":"Promonocyte","machine_name":"promonocyte","abbr_name":"promono","comment":"","visualisation_colour":"#e080d0","display_order":6},{"id":16,"readable_name":"Immature monocyte","machine_name":"immature_monocyte","abbr_name":"imm_mono","comment":"","visualisation_colour":"#a040a0","display_order":7},{"id":17,"readable_name":"test","machine_name":"test","abbr_name":"test","comment":"Test","visualisation_colour":"#FFFFFF","display_order":20}]'
 
 
 class UserFactory(factory.django.DjangoModelFactory):
@@ -59,7 +62,7 @@ class CellTypeFactory(factory.django.DjangoModelFactory):
     abbr_name = "test"
     comment = "Test"
     visualisation_colour = "#FFFFFF"
-    display_order = 13
+    display_order = 20
 
 
 class TestMainViews(WebTest):

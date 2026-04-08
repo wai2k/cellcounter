@@ -41,8 +41,9 @@ var counter = (function () {
                 });
             }).done(function () {
                 /* Loads an empty count_data array */
-                var cell_order = ['blasts', 'promyelocytes', 'myelocytes', 'meta', 'neutrophils', 'monocytes', 'basophils',
-                    'eosinophils', 'lymphocytes', 'plasma_cells', 'erythroid', 'other', 'lymphoblasts'];
+                var cell_order = ['blasts', 'promyelocytes', 'myelocytes', 'meta', 'neutrophils',
+                    'monoblast', 'promonocyte', 'immature_monocyte', 'mature_monocyte',
+                    'basophils', 'eosinophils', 'lymphocytes', 'plasma_cells', 'erythroid', 'other', 'lymphoblasts'];
 
                 for (var i = 0; i < cell_order.length; i++) {
                     for (var cell in cell_types) {
