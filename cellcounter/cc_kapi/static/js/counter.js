@@ -22,6 +22,50 @@ var chart, chart2;
 
 var keyboard_platform = "desktop";
 
+/* Preset group definitions. Future custom groups use the same structure. */
+var PRESET_GROUPS = {
+    'myeloid_lineage_excl_blasts': {
+        label: 'Myeloid Lineage (excl blasts)',
+        members: ['promyelocytes', 'myelocytes', 'meta', 'neutrophils', 'eosinophils', 'basophils'],
+        member_labels: 'Promyelocytes, Myelocytes, Metamyelocytes, Neutrophils, Eosinophils, Basophils'
+    },
+    'blast_equivalents': {
+        label: 'Blast Equivalents',
+        members: ['blasts', 'monoblast', 'promonocyte'],
+        member_labels: 'Blasts, Monoblasts, Promonocytes'
+    }
+};
+
+/* Pure function: compute group totals from count_data.
+ * count_data: array of {machine_name, count, abnormal}
+ * groups: object in PRESET_GROUPS format
+ * total: grand total (int)
+ * Returns: array of {key, label, count, percent, member_labels}
+ */
+function compute_group_totals(count_data, groups, total) {
+    var results = [];
+    for (var group_key in groups) {
+        if (groups.hasOwnProperty(group_key)) {
+            var group = groups[group_key];
+            var group_count = 0;
+            for (var i = 0; i < count_data.length; i++) {
+                if (group.members.indexOf(count_data[i].machine_name) !== -1) {
+                    group_count += count_data[i].count + count_data[i].abnormal;
+                }
+            }
+            var percent = total > 0 ? Math.round((group_count / total) * 100) : 0;
+            results.push({
+                key: group_key,
+                label: group.label,
+                count: group_count,
+                percent: percent,
+                member_labels: group.member_labels
+            });
+        }
+    }
+    return results;
+}
+
 /* Counter object */
 var counter = (function () {
     var undo_history = [];
