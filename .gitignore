@@ -75,3 +75,6 @@ venv/
 
 # Environment variables
 env.dev
+
+# Claude
+.claude/
