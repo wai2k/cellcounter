@@ -2,7 +2,6 @@
 
 from django.db import models, migrations
 
-
 CELLTYPES_INITIAL = [
     {
         "readable_name": "Neutrophils",

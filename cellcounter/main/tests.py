@@ -13,7 +13,6 @@ from tempfile import mkdtemp
 import datetime
 from pytz import utc
 
-
 CELLTYPE_LIST = [
     ("Neutrophils", "neutrophils"),
     ("Metamyelocytes", "meta"),
