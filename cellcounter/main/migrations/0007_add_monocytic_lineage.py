@@ -1,6 +1,5 @@
 from django.db import migrations
 
-
 # Monocytic lineage colours (purples/magentas, distinct from basophils #8064a2)
 NEW_CELL_TYPES = [
     {
@@ -29,14 +28,14 @@ NEW_CELL_TYPES = [
 # display_order mapping: old_order -> new_order for records that need shifting
 # (all records with display_order >= 5 shift up by 3)
 SHIFT_MAP = {
-    5: 8,   # mature_monocyte
-    6: 9,   # basophils
+    5: 8,  # mature_monocyte
+    6: 9,  # basophils
     7: 10,  # eosinophils
     8: 11,  # lymphocytes
     9: 12,  # plasma_cells
-    10: 13, # erythroid
-    11: 14, # other
-    12: 15, # lymphoblasts
+    10: 13,  # erythroid
+    11: 14,  # other
+    12: 15,  # lymphoblasts
 }
 
 
