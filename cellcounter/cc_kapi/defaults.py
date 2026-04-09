@@ -21,7 +21,10 @@ BUILTIN_DESKTOP_KEYBOARD_MAP = {
         {"cellid": 9, "key": "s"},
         {"cellid": 11, "key": "d"},
         {"cellid": 10, "key": "f"},
-        {"cellid": 13, "key": "g"},
+        {"cellid": 16, "key": "g"},
+        {"cellid": 15, "key": "h"},
+        {"cellid": 14, "key": "j"},
+        {"cellid": 13, "key": "y"},
         {"cellid": 7, "key": "z"},
         {"cellid": 6, "key": "x"},
         {"cellid": 12, "key": "c"},
@@ -46,7 +49,10 @@ BUILTIN_MOBILE_KEYBOARD_MAP = {
         {"cellid": 9, "key": "s"},
         {"cellid": 11, "key": "d"},
         {"cellid": 10, "key": "f"},
-        {"cellid": 13, "key": "g"},
+        {"cellid": 16, "key": "g"},
+        {"cellid": 15, "key": "h"},
+        {"cellid": 14, "key": "j"},
+        {"cellid": 13, "key": "y"},
         {"cellid": 7, "key": "z"},
         {"cellid": 6, "key": "x"},
         {"cellid": 12, "key": "c"},
@@ -125,9 +131,9 @@ BAD_KEYBOARD = {
     "device_type": "desktopz",
 }
 
-BUILTIN_DESKTOP_KEYBOARD_STRING = """{"mappings":[{"cellid":1,"key":"q"},{"cellid":2,"key":"w"},{"cellid":3,"key":"e"},{"cellid":4,"key":"r"},{"cellid":5,"key":"t"},{"cellid":8,"key":"a"},{"cellid":9,"key":"s"},{"cellid":11,"key":"d"},{"cellid":10,"key":"f"},{"cellid":13,"key":"g"},{"cellid":7,"key":"z"},{"cellid":6,"key":"x"},{"cellid":12,"key":"c"}],"created":"2013-10-22T12:15:05.118Z","is_default":true,"label":"Default","last_modified":"2013-10-22T12:15:13.201Z","user":null,"device_type":"desktop"}"""
+BUILTIN_DESKTOP_KEYBOARD_STRING = """{"mappings":[{"cellid":1,"key":"q"},{"cellid":2,"key":"w"},{"cellid":3,"key":"e"},{"cellid":4,"key":"r"},{"cellid":5,"key":"t"},{"cellid":8,"key":"a"},{"cellid":9,"key":"s"},{"cellid":11,"key":"d"},{"cellid":10,"key":"f"},{"cellid":16,"key":"g"},{"cellid":15,"key":"h"},{"cellid":14,"key":"j"},{"cellid":13,"key":"y"},{"cellid":7,"key":"z"},{"cellid":6,"key":"x"},{"cellid":12,"key":"c"}],"created":"2013-10-22T12:15:05.118Z","is_default":true,"label":"Default","last_modified":"2013-10-22T12:15:13.201Z","user":null,"device_type":"desktop"}"""
 
-BUILTIN_MOBILE_KEYBOARD_STRING = """{"mappings":[{"cellid":1,"key":"q"},{"cellid":2,"key":"w"},{"cellid":3,"key":"e"},{"cellid":4,"key":"r"},{"cellid":5,"key":"t"},{"cellid":8,"key":"a"},{"cellid":9,"key":"s"},{"cellid":11,"key":"d"},{"cellid":10,"key":"f"},{"cellid":13,"key":"g"},{"cellid":7,"key":"z"},{"cellid":6,"key":"x"},{"cellid":12,"key":"c"}],"created":"2013-10-22T12:15:05.118Z","is_default":true,"label":"Default","last_modified":"2013-10-22T12:15:13.201Z","user":null,"device_type":"mobile"}"""
+BUILTIN_MOBILE_KEYBOARD_STRING = """{"mappings":[{"cellid":1,"key":"q"},{"cellid":2,"key":"w"},{"cellid":3,"key":"e"},{"cellid":4,"key":"r"},{"cellid":5,"key":"t"},{"cellid":8,"key":"a"},{"cellid":9,"key":"s"},{"cellid":11,"key":"d"},{"cellid":10,"key":"f"},{"cellid":16,"key":"g"},{"cellid":15,"key":"h"},{"cellid":14,"key":"j"},{"cellid":13,"key":"y"},{"cellid":7,"key":"z"},{"cellid":6,"key":"x"},{"cellid":12,"key":"c"}],"created":"2013-10-22T12:15:05.118Z","is_default":true,"label":"Default","last_modified":"2013-10-22T12:15:13.201Z","user":null,"device_type":"mobile"}"""
 
 BUILTIN_KEYBOARD_STRING = """[{"id":"builtin","user":null,"label":"Default desktop","created":"2013-10-22T12:15:05Z","last_modified":"2013-10-22T12:15:13Z","device_type":"desktop","is_default":true,"href":"/api/keyboards/desktop/builtin/"},{"id":"builtin","user":null,"label":"Default mobile","created":"2016-05-21T12:33:00Z","last_modified":"2016-05-21T12:33:00Z","device_type":"mobile","is_default":true,"href":"/api/keyboards/mobile/builtin/"}]"""
 
